@@ -401,7 +401,7 @@ namespace Xbim.GLTF
                         var meshIndex = _meshes.Count;
                         targetMesh = new gltf.Mesh
                         {
-                            Name = $"Instance {productLabel}"
+                            Name = $"Instance {shapeInstance.IfcProductLabel}"
                         };
 
                         // link node to mesh
@@ -411,6 +411,8 @@ namespace Xbim.GLTF
                         _nodes.Add(tnode);
                         _meshes.Add(targetMesh);
                     }
+
+                    productLabel = shapeInstance.IfcProductLabel;
                     
                     // now the geometry
                     //
